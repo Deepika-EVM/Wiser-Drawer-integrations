@@ -1,0 +1,341 @@
+/* ============================================
+   GLOBAL APP LAYOUT
+============================================ */
+.app {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   NAVBAR
+============================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar-content {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-icon {
+  background: #95a13b;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+}
+
+.navbar-title h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.navbar-title p {
+  margin: 0;
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: #95a13b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.btn-secondary.desktop-only {
+    margin: 15px 0;
+    background: #95a13b;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-primary:hover {
+    background: #fff;
+    color: #95a13b;
+    border: 1px solid #95a13b;
+}
+
+.btn-link {
+  background: transparent;
+  border: none;
+  color: #95a13b;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.desktop-only {
+  display: flex;
+}
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: flex; }
+}
+
+/* ============================================
+   MAIN CONTENT
+============================================ */
+.main {
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.store-link, .date {
+  -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 42px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  color: #95a13b;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.page-desc {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 500px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-box {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: anchor-center;
+    gap: 5px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #95a13b;
+}
+
+/* ============================================
+   FILTER BAR
+============================================ */
+.filter-bar {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-input:focus {
+  background: #f8fafc;
+}
+
+.sort-select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ============================================
+   GRID
+============================================ */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   EMPTY STATE
+============================================ */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-icon {
+  background: white;
+  border: 1px solid #e2e8f0;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   PAGINATION
+============================================ */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 30px 0;
+  
+    align-items: center;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-count {
+  font-weight: 600;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  border-top: 1px solid #e2e8f0;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.status {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot.green { background: #10b981; }
+.dot.yellow { background: #f59e0b; }

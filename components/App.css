@@ -1,0 +1,244 @@
+/* ================== Clean Professional UI ================== */
+.code-card {
+  border-radius: 20px;
+  border: 1px solid #95a13b;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.code-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.code-card-header {
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #95a13b;
+  display: flex;
+  justify-content: space-between;
+}
+
+.theme-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.theme-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-icon {
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #95a13b;
+  color: #fff;
+}
+
+.theme-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Store link */
+.store-link {
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.store-link:hover {
+  color: #111827;
+}
+
+/* Author & date */
+.author-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #95a13b;
+  border: 1px solid #95a13b;
+  color: #fff;
+  font-size: 14px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Code Block */
+.code-block {
+  background-color: #ffffff;
+}
+
+/* Toolbar */
+.code-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #95a13b;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Copy Button */
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #95a13b;
+  font-weight: 500;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #95a13b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover, .accordion-toggle:hover {
+  background-color: #95a13b;
+    color: #fff!important;
+}
+
+
+/* Popup */
+.copy-popup {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #95a13b;
+  background-color: #95a13b;
+  border-radius: 6px;
+  pointer-events: none;
+  animation: fadeOutCopy 1.3s ease-out forwards;
+}
+
+/* Code */
+.code-content {
+  max-height: 288px;
+  overflow: auto;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  background-color: #f9fafb;
+  color: #000;
+  white-space: pre-wrap;
+}
+.accordion-toggle {
+  text-align: center;
+  padding: 12px 0;
+  margin: 10px 15px;
+  cursor: pointer;
+  color: #95a13b;
+  font-weight: 600;
+  border: 1px solid #8BC34A;
+  transition: color 0.2s;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.accordion-content {
+  padding: 16px 10px 6px;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.screenshot-container img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #dadfba;
+  margin-bottom: 20px;
+}
+
+.screenshot-fallback {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.theme-changes {
+  background: #fafafa;
+  border: 1px solid #e0e6b9;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.theme-changes h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.theme-changes pre {
+  white-space: pre-wrap;
+  font-size: 13px;
+  font-family: monospace;
+  color: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation */
+@keyframes fadeOutCopy {
+  0% { opacity: 1; transform: translate(-50%, 0); }
+  60% { opacity: 1; transform: translate(-50%, -4px); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+.screenshot {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+.screenshot-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+}
