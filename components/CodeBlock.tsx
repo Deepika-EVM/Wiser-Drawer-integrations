@@ -14,29 +14,29 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippet }) => {
 
 
 
-const handleCopy = async () => {
-  try {
-    if (navigator?.clipboard?.writeText) {
-      await navigator.clipboard.writeText(snippet.code); 
-    } else {
-      // Fallback for unsafe environments
-      const textArea = document.createElement("textarea");
-      textArea.value = snippet.code;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
+  const handleCopy = async () => {
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(snippet.code);
+      } else {
+        // Fallback for unsafe environments
+        const textArea = document.createElement("textarea");
+        textArea.value = snippet.code;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 1500);
+
+    } catch (err) {
+      console.error("Copy failed", err);
+
     }
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-
-  } catch (err) {
-    console.error("Copy failed", err);
-
-  }
-};
+  };
 
   const cleanStoreUrl = snippet.storeName
     ?.replace(/^https?:\/\//, "")
@@ -56,12 +56,8 @@ const handleCopy = async () => {
 
       {/* HEADER */}
       <div className="code-card-header">
-        <div className="theme-info">
-          <div className="theme-name-wrapper">
-            <ShoppingBag size={16} />
-            <h3 className="theme-name">{snippet.themeName}</h3>
-          </div>
 
+        <div className="author-date">
           <a
             className="store-link"
             href={`https://${cleanStoreUrl}`}
@@ -70,13 +66,26 @@ const handleCopy = async () => {
           >
             {cleanStoreUrl}
           </a>
-        </div>
-
-        <div className="author-date">
           <div className="author">
             <User size={14} /> {snippet.author}
           </div>
-          <div className="date">{snippet.date}</div>
+
+        </div>
+
+        <div className="theme-info">
+                 
+          <div className="theme-name-wrapper">
+            <ShoppingBag size={16} />
+<h3 className="theme-name">
+  {snippet.themeName}
+  {snippet.version && (
+    <span className="theme-version"> ({snippet.version})</span>
+  )}
+</h3>
+
+          </div>
+
+   <div className="date">{snippet.date}</div>
         </div>
       </div>
 
@@ -88,13 +97,13 @@ const handleCopy = async () => {
             Code Snippet
           </div>
 
-        <button
-          className={`copy-button ${copied ? "copied" : ""}`}
-          onClick={handleCopy}
-        >
-          {copied ? <Check size={12} /> : <Copy size={12} />}
-          {copied ? "Copied" : "Copy"}
-        </button>
+          <button
+            className={`copy-button ${copied ? "copied" : ""}`}
+            onClick={handleCopy}
+          >
+            {copied ? <Check size={12} /> : <Copy size={12} />}
+            {copied ? "Copied" : "Copy"}
+          </button>
 
         </div>
 

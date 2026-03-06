@@ -4,10 +4,23 @@ import CodeBlock from './components/CodeBlock';
 import AddModal from './components/AddModal';
 import { Snippet, SortOption } from './types';
 import { INITIAL_DATA } from './services/initialData';
-import { addSnippetToFirebase, fetchSnippets } from './services/firebase';
-import "./App1.css";   // <-- NEW FILE
+import { addSnippetToFirebase, fetchSnippets, deleteSnippetById  } from './services/firebase';
+import "./App1.css";   
+const ADMIN_SECRET = "wisercode";
 
 const ITEMS_PER_PAGE = 48;
+
+const parseDate = (dateStr: string) => {
+  // format: 25-12-09 (YY-MM-DD)
+  if (/^\d{2}-\d{2}-\d{2}$/.test(dateStr)) {
+    const [yy, mm, dd] = dateStr.split("-");
+    return new Date(`20${yy}-${mm}-${dd}`);
+  }
+
+  // format: 2025-12-10 (YYYY-MM-DD)
+  return new Date(dateStr);
+};
+
 
 const App: React.FC = () => {
   const [snippets, setSnippets] = useState<Snippet[]>([]);
@@ -36,6 +49,12 @@ const App: React.FC = () => {
     init();
   }, []);
 
+const isAdminAllowed = () => {
+  const input = prompt("Enter admin code");
+  return input === ADMIN_SECRET;
+};
+
+
   const handleSaveSnippet = async (newSnippetData: Omit<Snippet, 'id'>) => {
     let newId = Date.now().toString();
 
@@ -60,12 +79,22 @@ const App: React.FC = () => {
       s.code.toLowerCase().includes(q)
     );
 
-    return filtered.sort((a, b) => {
-      if (sortBy === 'date-desc') return new Date(b.date).getTime() - new Date(a.date).getTime();
-      if (sortBy === 'date-asc') return new Date(a.date).getTime() - new Date(b.date).getTime();
-      if (sortBy === 'theme-asc') return a.themeName.localeCompare(b.themeName);
-      return 0;
-    });
+return filtered.sort((a, b) => {
+  if (sortBy === 'date-desc') {
+    return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+  }
+
+  if (sortBy === 'date-asc') {
+    return parseDate(a.date).getTime() - parseDate(b.date).getTime();
+  }
+
+  if (sortBy === 'theme-asc') {
+    return a.themeName.localeCompare(b.themeName);
+  }
+
+  return 0;
+});
+
   }, [snippets, searchQuery, sortBy]);
 
   const totalPages = Math.ceil(filteredSnippets.length / ITEMS_PER_PAGE);
@@ -82,19 +111,63 @@ const App: React.FC = () => {
   const uniqueStores = snippets.length;
 
 const downloadSnippets = async () => {
-  const snippets = await fetchSnippets();
+  if (!isAdminAllowed()) {
+    alert("Not allowed");
+    return;
+  }
+  const firebaseSnippets = await fetchSnippets();
 
-  const blob = new Blob([JSON.stringify(snippets, null, 2)], { type: "application/json" });
+  if (!firebaseSnippets.length) {
+    alert("No snippets found.");
+    return;
+  }
+
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete all snippets from Firebase after downloading?"
+  );
+
+  const fileText =
+`export const DOWNLOADED_SNIPPETS = [
+${firebaseSnippets.map(s => {
+  const isMultiline = s.code.includes("\n");
+
+  return `  {
+    id: '${s.id}',
+    date: '${s.date}',
+    storeName: '${s.storeName}',
+    themeName: '${s.themeName}',
+    code: ${isMultiline ? `\`${s.code}\`` : `'${s.code.replace(/'/g, "\\'")}'`},
+    author: '${s.author}',
+    themeChanges: '${s.themeChanges || ""}',
+    screenshot: '${s.screenshot || ""}'
+  }`;
+}).join(",\n")}
+];`;
+
+  const blob = new Blob([fileText], { type: "text/javascript" });
   const url = URL.createObjectURL(blob);
 
   const a = document.createElement("a");
   a.href = url;
-  a.download = "snippets.json";
+  a.download = "snippets.js";
   a.click();
-
   URL.revokeObjectURL(url);
-};
 
+  if (!confirmDelete) {
+    alert("Download completed. Firebase data was not deleted.");
+    return;
+  }
+
+  for (const s of firebaseSnippets) {
+    await deleteSnippetById(s.id);
+  }
+
+  setSnippets(prev =>
+    prev.filter(s => !firebaseSnippets.find(f => f.id === s.id))
+  );
+
+  alert("Download completed and Firebase data deleted.");
+};
 
 
   return (
@@ -216,6 +289,7 @@ const downloadSnippets = async () => {
 <button onClick={downloadSnippets} className="btn-secondary desktop-only">
   Download Firebase data Snippets
 </button>
+
 
 
       </main>

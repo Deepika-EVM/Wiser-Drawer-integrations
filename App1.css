@@ -116,6 +116,19 @@ button.btn-secondary.desktop-only {
   .desktop-only { display: none; }
   .mobile-only { display: flex; }
 }
+/* Store link */
+.store-link {
+  text-decoration: underline;
+  font-size: 18px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.store-link:hover {
+  color: #95a13b;
+}
 
 /* ============================================
    MAIN CONTENT
@@ -126,15 +139,18 @@ button.btn-secondary.desktop-only {
   padding: 40px 20px;
 }
 .store-link, .date {
-  -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+font-weight: 800;
+    color: #000;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 42px;
+    min-height: 30px;
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: left;
 }
 /* HEADER */
 .header {
@@ -225,7 +241,7 @@ button.btn-secondary.desktop-only {
 }
 
 .search-input:focus {
-  background: #f8fafc;
+      border-color: #8BC34A;
 }
 
 .sort-select {
@@ -296,11 +312,12 @@ button.btn-secondary.desktop-only {
 }
 
 .pagination button {
-  padding: 8px 16px;
-  border: 1px solid #e2e8f0;
-  background: white;
-  border-radius: 8px;
-  cursor: pointer;
+padding: 8px 16px;
+    border: 1px solid #95a13b;
+    background: #95a13b;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .pagination button:disabled {

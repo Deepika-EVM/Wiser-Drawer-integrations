@@ -5,7 +5,9 @@ import {
   getDocs, 
   addDoc, 
   query, 
-  orderBy 
+  orderBy,
+  deleteDoc,
+  doc 
 } from "firebase/firestore";
 import { Snippet } from "../types";
 
@@ -18,7 +20,10 @@ const firebaseConfig = {
   messagingSenderId: "882803140404",
   appId: "1:882803140404:web:3eef58d2e8fbeba1aca761"
 };
-
+export const deleteSnippetById = async (id: string) => {
+  if (!db) return;
+  await deleteDoc(doc(db, "snippets", id));
+};
 // Check if Firebase config is valid
 const isConfigured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
 

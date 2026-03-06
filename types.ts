@@ -2,7 +2,8 @@
 export interface Snippet {
   id: string;             // Unique identifier for the snippet
   storeName: string;      // Store associated with the snippet
-  themeName: string;      // Theme name of the store
+  themeName: string;
+  version?: string;      // Theme name of the store
   date: string;           // Date string in ISO format (YYYY-MM-DD recommended)
   author: string;         // Author of the snippet
   code: string;           // The actual code snippet
