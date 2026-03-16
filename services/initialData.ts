@@ -1763,5 +1763,259 @@ wiserAddedToCart();                                    `,
     author: 'Deepika',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'oCGX7ROn79RNVn0wlvZC',
+    date: '2026-03-13',
+    storeName: 'https://wvkziv-0c.myshopify.com/',
+    themeName: ' Minimog - OS 2.0',
+    code: `function wiseraddedtocart(){
+  const wscart = document.querySelector('m-cart-drawer');
+  wscart.onCartDrawerUpdate();
+  wscart.open();
+  }
+wiseraddedtocart()`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'jSeu79s0BZssdscGz4tY',
+    date: '2026-03-13',
+    storeName: 'https://official-bbc-shop.myshopify.com/',
+    themeName: 'Dawn',
+    code: `                                        async function wiseraddedtocart() {
+    const wsres = await fetch('/?section_id=cart-icon-bubble');
+    const wsText = await wsres.text();
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+    const wsnewBox = wshtml.querySelector('#shopify-section-cart-icon-bubble')?.innerHTML;
+    const cartIconElement = document.querySelector('#cart-icon-bubble.header__icon--cart');
+    cartIconElement.innerHTML = wsnewBox;
+    const wsrescart = await fetch('/?section_id=cart-drawer');
+    const wstextcart = await wsrescart.text();
+    const wshtmlcart = document.createElement('div');
+    wshtmlcart.innerHTML = wstextcart;
+    const wsnewBoxCart = wshtmlcart.querySelector('.drawer__inner').innerHTML;
+    document.querySelector('.drawer__inner').innerHTML = wsnewBoxCart;
+    const wsopener = document.querySelector('cart-drawer');
+    wsopener.open();
+    document.querySelector('cart-drawer').classList.remove('is-empty');
+  }
+
+wiseraddedtocart();
+                                                                                                                                                                                                                                                                 `,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'fwEIHIYyZEGhYDu7Meod',
+    date: '2026-03-13',
+    storeName: 'https://fnawx7-20.myshopify.com/',
+    themeName: 'Tinker',
+    code: `async function wiserAddedToCart() {
+    const wsres = await fetch('/?section_id=header');
+    const wsText = await wsres.text();
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+
+    const wsnewBox = wshtml.querySelector(
+      'cart-items-component'
+    )?.innerHTML;
+
+    const cartIconText = wshtml.querySelector(
+      'cart-icon'
+    )?.innerHTML;
+
+    const cartIcon = document.querySelector(
+      'cart-icon'
+    );
+
+
+
+    cartIcon.innerHTML = cartIconText;
+
+
+    const cartDrawerItems = document.querySelector(
+      'cart-items-component'
+    );
+
+
+    cartDrawerItems.innerHTML = wsnewBox;
+ const cartDrawer = document.querySelector(
+      'cart-drawer-component'
+    );
+
+  const dialog = cartDrawer.querySelector('dialog, .cart-drawer__dialog');
+
+
+  if (dialog?.classList.contains('cart-drawer--empty')) {
+    dialog.classList.remove('cart-drawer--empty');
+  }
+
+
+
+    cartDrawer.open();
+  }
+
+wiserAddedToCart();
+                                               `,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'c5JwswPlsPdi094L0xEN',
+    date: '2026-03-13',
+    storeName: 'https://3a1121-82.myshopify.com/',
+    themeName: 'shark',
+    code: ` async function wiseraddedtocart() {
+    const wsrescart = await fetch('/?section_id=cart-drawer');
+    const wstextcart = await wsrescart.text();
+    const wshtmlcart = document.createElement('div');
+    wshtmlcart.innerHTML = wstextcart;
+    const wsnewBoxCart = wshtmlcart.querySelector('cart-drawer .cart-drawer-content').innerHTML;
+    document.querySelector('cart-drawer .cart-drawer-content').innerHTML = wsnewBoxCart;
+    const wsopener = document.querySelector('cart-drawer');
+    wsopener.open();
+    document.querySelector('cart-drawer').classList.remove('is-empty');
+  }
+wiseraddedtocart();`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'LnwXqRue8QJ4Z7T2BrmU',
+    date: '2026-03-13',
+    storeName: 'https://2351de-e7.myshopify.com/',
+    themeName: 'ap-aprin',
+    code: `async function wiseraddedtocart() {
+    const wsres = await fetch('/?section_id=header-3');
+    const wsText = await wsres.text();
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+    const wsnewBox = wshtml.querySelector('#shopify-section-header-3')?.innerHTML;
+    const cartIconElement = document.querySelector('#shopify-section-header-3');
+    cartIconElement.innerHTML = wsnewBox;
+    const wsrescart = await fetch('/?section_id=mini-cart');
+    const wstextcart = await wsrescart.text();
+    const wshtmlcart = document.createElement('div');
+    wshtmlcart.innerHTML = wstextcart;
+    const wsnewBoxCart = wshtmlcart.querySelector('#shopify-section-mini-cart').innerHTML;
+    document.querySelector('#shopify-section-mini-cart').innerHTML = wsnewBoxCart;
+   const countData = document.querySelector('ap-cartcount')
+   countData.click()
+  }
+wiseraddedtocart()`,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '9GoIvYtfamzAOsDLSsb4',
+    date: '2026-03-13',
+    storeName: 'https://sygeplejebutik.myshopify.com/',
+    themeName: 'Hyper',
+    code: `                                       function wiseraddedtocart() {
+        const wscart = document.querySelector('cart-drawer');
+        wscart.show()
+        wscart.onCartRefresh(wscart )
+ fetch('/cart.js').then(r=>r.json()).then(cart=>document.querySelectorAll('cart-count').forEach(el=>el.onCartUpdate({cart})));
+      }
+
+
+wiseraddedtocart();                                                                                                                                                                                                                                  `,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '8Fjw2mg0yni7upNxbSF8',
+    date: '2026-03-13',
+    storeName: 'https://admira-sales-distribution.myshopify.com/',
+    themeName: 'Keystone',
+    code: `function  wiseraddedtocart() {
+let app = document.querySelectorAll('html')[0]._x_dataStack[0];
+app.updateCart(true);
+
+}
+
+wiseraddedtocart();                 `,
+    author: 'yash',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '5ctXMwfbZGj5wdY0fhlL',
+    date: '2026-03-13',
+    storeName: 'https://m1010v-b9.myshopify.com/',
+    themeName: 'Atelier',
+    code: `async function wiserAddedToCart() {
+
+    const wsres = await fetch('/?section_id=header');
+    const wsText = await wsres.text();
+
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+
+    const wsnewBox = wshtml.querySelector('cart-items-component')?.innerHTML;
+    const cartIconText = wshtml.querySelector('cart-icon')?.innerHTML;
+
+    const cartDrawer = document.querySelector('cart-drawer-component');
+    if (!cartDrawer) return;
+
+    const cartDrawerItems = cartDrawer.querySelector('cart-items-component');
+    const cartIcon = cartDrawer.querySelector('cart-icon');
+
+    if (cartDrawerItems && wsnewBox) {
+      cartDrawerItems.innerHTML = wsnewBox;
+    }
+
+    if (cartIcon && cartIconText) {
+      cartIcon.innerHTML = cartIconText;
+    }
+    const dialog = cartDrawer.querySelector('dialog, .cart-drawer__dialog');
+    dialog?.classList.remove('cart-drawer--empty');
+    if (typeof cartDrawer.open === 'function') {
+      cartDrawer.open();
+    }
+}
+wiserAddedToCart();`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '1PKXS32LZf1oCBUdVVOE',
+    date: '2026-03-13',
+    storeName: 'https://gegshop-31b5.myshopify.com/',
+    themeName: 'Momentum',
+    code: `                                        async function wiseraddedtocart() {
+  const cart = await (await fetch('/cart.js')).json();
+  if (window.wetheme && typeof window.wetheme.updateCartCount === 'function') {
+    window.wetheme.updateCartCount(cart);
+  }
+}
+
+wiseraddedtocart();
+                                    `,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'Kte53o821SbLlG8p69uX',
+    date: '2026-03-09',
+    storeName: 'fb235c-92.myshopify.com',
+    themeName: 'Xclusive',
+    code: `function wiseraddedtocart() {
+ ajaxCart.load(false, true, false, true);
+}
+wiseraddedtocart()`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
