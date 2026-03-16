@@ -1853,9 +1853,6 @@ wiseraddedtocart();
   if (dialog?.classList.contains('cart-drawer--empty')) {
     dialog.classList.remove('cart-drawer--empty');
   }
-
-
-
     cartDrawer.open();
   }
 
