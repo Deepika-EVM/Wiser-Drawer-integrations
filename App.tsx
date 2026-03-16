@@ -197,7 +197,7 @@ ${firebaseSnippets.map(s => {
         {/* HEADER INFO */}
         <div className="header">
           <div>
-            <h2 className="page-title">Theme Repository</h2>
+            <h2 className="page-title">Theme</h2>
             <p className="page-desc">
               Centralized hub for Shopify drawer integration codes.
             </p>
