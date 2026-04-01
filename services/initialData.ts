@@ -2045,5 +2045,78 @@ wiseraddedtocart();
     author: 'jaya',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'xy6IsqB30YmVBDLtqotO',
+    date: '2026-03-20',
+    storeName: '8887fa-fe.myshopify.com',
+    themeName: 'Ritual',
+    code: `async function wiserAddedToCart() {
+
+const wsres = await fetch('/?section_id=header');
+const wsText = await wsres.text();
+
+const wshtml = document.createElement('div');
+wshtml.innerHTML = wsText;
+
+const wsnewBox = wshtml.querySelector('cart-items-component')?.innerHTML;
+const cartIconText = wshtml.querySelector('cart-icon')?.innerHTML;
+
+const cartDrawer = document.querySelector('cart-drawer-component');
+if (!cartDrawer) return;
+
+const cartDrawerItems = cartDrawer.querySelector('cart-items-component');
+const cartIcon = cartDrawer.querySelector('cart-icon');
+
+if (cartDrawerItems && wsnewBox) {
+cartDrawerItems.innerHTML = wsnewBox;
+}
+
+if (cartIcon && cartIconText) {
+cartIcon.innerHTML = cartIconText;
+}
+const dialog = cartDrawer.querySelector('dialog, .cart-drawer__dialog');
+dialog?.classList.remove('cart-drawer--empty');
+if (typeof cartDrawer.open === 'function') {
+cartDrawer.open();
+}
+}
+wiserAddedToCart();`,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'tapyb3aUOpjavV73OaY2',
+    date: '2026-03-19',
+    storeName: 'jewelpanda-in.myshopify.com',
+    themeName: 'Luxwatches',
+    code: `async function wiserAddedToCart() {
+window.luxwatches.updateDropdownCart();
+if (window.matchMedia('(min-width: 1200px)').matches) {
+document.querySelector('#dropdown-cart')?.classList.add('menu-open');
+window.luxwatches.initToggleDropwdownCart()
+} else {
+document.documentElement.classList.add('cart-show');
+}
+}
+
+wiserAddedToCart();`,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'wbnBsvwVoUvAS6huTRLc',
+    date: '2026-03-16',
+    storeName: 'myomnidesk.myshopify.com',
+    themeName: 'Combine',
+    code: `function wiseraddedtocart(){
+window.refreshCart();
+}
+wiseraddedtocart();`,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
