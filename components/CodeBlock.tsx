@@ -57,20 +57,28 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippet }) => {
       {/* HEADER */}
       <div className="code-card-header">
 
-        <div className="author-date">
-          <a
-            className="store-link"
-            href={`https://${cleanStoreUrl}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {cleanStoreUrl}
-          </a>
-          <div className="author">
-            <User size={14} /> {snippet.author}
-          </div>
+<div className="author-date">
+  <a
+    className="store-link"
+    href={`https://${cleanStoreUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {cleanStoreUrl}
+  </a>
 
-        </div>
+  {/* ✅ STORE TYPE BADGE */}
+  {snippet.storeType && (
+    <div className="store-type-badge">
+      {snippet.storeType}
+    </div>
+  )}
+
+
+  <div className="author">
+    <User size={14} /> {snippet.author}
+  </div>
+</div>
 
         <div className="theme-info">
                  
