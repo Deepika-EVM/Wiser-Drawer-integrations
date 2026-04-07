@@ -93,7 +93,6 @@ const filteredSnippets = useMemo(() => {
     if (sortBy === 'theme-asc') {
       return (a.themeName ?? '').localeCompare(b.themeName ?? '');
     }
-
     return 0;
   });
 
