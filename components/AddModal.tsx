@@ -23,6 +23,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     storeName: '',
     themeName: '',
+    storeType: '',
     version: '',
     author: '',
     code: '',
@@ -38,7 +39,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.storeName || !formData.themeName || !formData.code || !formData.author) {
+    if (!formData.storeName || !formData.themeName || !formData.storeType || !formData.code || !formData.author) {
       setError('Store, Theme, Author, and Code are required.');
       return;
     }
@@ -52,6 +53,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
       setFormData({
         storeName: '',
         themeName: '',
+        storeType: '',
         version: '',
         author: '',
         code: '',
@@ -112,7 +114,34 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
       }
     />
   </div>
+{/* store types */}
+<div className="field">
+  <label>Store Type</label>
+<select
+  value={formData.storeType}
+  onChange={(e) => setFormData({ ...formData, storeType: e.target.value })}
+>
+    <option value="">Select Store Type</option>
+    <option value="Electronics">📱 Electronics</option>
+    <option value="Fashion">👕 Fashion</option>
+    <option value="Beauty">💄 Beauty</option>
+    <option value="Home & Decor">🏠 Home & Decor</option>
+    <option value="Food & Grocery">🛒 Food & Grocery</option>
+    <option value="Health & Fitness">💪 Health & Fitness</option>
+    <option value="Jewelry">💍 Jewelry</option>
+    <option value="Automobile">🚗 Automobile</option>
+    <option value="Pet Supplies">🐶 Pet Supplies</option>
+    <option value="Baby Products">👶 Baby Products</option>
+    <option value="Digital Products">💻 Digital Products</option>
+    <option value="Print on Demand">🖨️ Print on Demand</option>
+    <option value="Handmade">🎨 Handmade</option>
+    <option value="Luxury">🏷️ Luxury</option>
+    <option value="B2B">🏢 B2B / Wholesale</option>
 
+    {/* Fallback */}
+    <option value="Other">Other</option>
+  </select>
+</div>
   {/* ✅ NEW VERSION FIELD */}
   <div className="field">
     <label>Version (optional)</label>

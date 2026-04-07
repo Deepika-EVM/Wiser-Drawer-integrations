@@ -70,32 +70,34 @@ const isAdminAllowed = () => {
     setSortBy('date-desc');
   };
 
-  const filteredSnippets = useMemo(() => {
-    const q = searchQuery.toLowerCase();
-    const filtered = snippets.filter(s =>
-      s.themeName.toLowerCase().includes(q) ||
-      s.storeName.toLowerCase().includes(q) ||
-      s.author.toLowerCase().includes(q) ||
-      s.code.toLowerCase().includes(q)
-    );
+const filteredSnippets = useMemo(() => {
+  const q = searchQuery.toLowerCase();
 
-return filtered.sort((a, b) => {
-  if (sortBy === 'date-desc') {
-    return parseDate(b.date).getTime() - parseDate(a.date).getTime();
-  }
+  const filtered = snippets.filter(s =>
+    (s.themeName ?? '').toLowerCase().includes(q) ||
+    (s.storeType ?? '').toLowerCase().includes(q) ||
+    (s.storeName ?? '').toLowerCase().includes(q) ||
+    (s.author ?? '').toLowerCase().includes(q) ||
+    (s.code ?? '').toLowerCase().includes(q)
+  );
 
-  if (sortBy === 'date-asc') {
-    return parseDate(a.date).getTime() - parseDate(b.date).getTime();
-  }
+  return filtered.sort((a, b) => {
+    if (sortBy === 'date-desc') {
+      return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+    }
 
-  if (sortBy === 'theme-asc') {
-    return a.themeName.localeCompare(b.themeName);
-  }
+    if (sortBy === 'date-asc') {
+      return parseDate(a.date).getTime() - parseDate(b.date).getTime();
+    }
 
-  return 0;
-});
+    if (sortBy === 'theme-asc') {
+      return (a.themeName ?? '').localeCompare(b.themeName ?? '');
+    }
 
-  }, [snippets, searchQuery, sortBy]);
+    return 0;
+  });
+
+}, [snippets, searchQuery, sortBy]);
 
   const totalPages = Math.ceil(filteredSnippets.length / ITEMS_PER_PAGE);
   const paginatedSnippets = filteredSnippets.slice(
