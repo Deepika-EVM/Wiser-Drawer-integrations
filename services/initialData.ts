@@ -2118,5 +2118,95 @@ wiseraddedtocart();`,
     author: 'jaya',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'eKUBtqH8DrkKN8Ot90gE',
+    date: '2026-04-06',
+    storeName: '6afdip-jq.myshopify.com',
+    themeName: 'Booster-6.1.5',
+    code: `function wiseraddedtocart() {
+  BoosterTheme.cart.open();
+}
+wiseraddedtocart();   `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'ZIWKRtQz7cs28zv97y7g',
+    date: '2026-04-06',
+    storeName: 'pro-chefly.myshopify.com',
+    themeName: 'King',
+    code: `async function wiseraddedtocart() {
+  const wsrescart = await fetch('/?section_id=cart-drawer');
+  const wstextcart = await wsrescart.text();
+  const wshtmlcart = document.createElement('div');
+  wshtmlcart.innerHTML = wstextcart;
+
+  const wsnewBoxCart = wshtmlcart.querySelector('cart-drawer .side--drawer-inner')?.innerHTML;
+  const currentDrawer = document.querySelector('cart-drawer .side--drawer-inner');
+
+  if (wsnewBoxCart && currentDrawer) {
+    currentDrawer.innerHTML = wsnewBoxCart;
+  }
+
+  document.querySelector('[data-source=cart-drawer]')?.click();
+
+  const cartCount = document.querySelector('[data-source=cart-drawer] .evmcart-drawer-count');
+  if (cartCount) cartCount.classList.remove('hidden');
+
+  document.querySelector('cart-drawer')?.classList.remove('is-empty');
+}
+
+wiseraddedtocart(); `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'WaUuD96dltgf69PAjlIW',
+    date: '2026-04-06',
+    storeName: 'noggin-boss.myshopify.com',
+    themeName: 'Impulse',
+    code: `function wiseraddedtocart() {
+  new theme.CartDrawer();
+  $('.js-drawer-open-cart span').trigger('click');
+}
+wiseraddedtocart(); `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '2aHXwwnpZ3Eq3XVNqPcP',
+    date: '2026-04-06',
+    storeName: 'blingqueen-in2.myshopify.com',
+    themeName: 'Impulse',
+    code: `function wiseraddedtocart() {
+    document.dispatchEvent(new CustomEvent('ajaxProduct:added', {
+        detail: {
+            product: '',
+            addToCartBtn: ''
+        }
+    }));
+}
+
+wiseraddedtocart();`,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'T6t3py8Pf9TGjYSSRENV',
+    date: '2026-04-02',
+    storeName: 'athomstore.myshopify.com',
+    themeName: 'Yuva',
+    code: `                                                                             function wiseraddedtocart(){
+   $('[data-cart-count]').show();
+}      
+wiseraddedtocart()                                                                                                                                               `,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
