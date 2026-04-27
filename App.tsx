@@ -136,6 +136,7 @@ ${firebaseSnippets.map(s => {
     id: '${s.id}',
     date: '${s.date}',
     storeName: '${s.storeName}',
+    storeType: '${s.storeType || ""}',
     themeName: '${s.themeName}',
     code: ${isMultiline ? `\`${s.code}\`` : `'${s.code.replace(/'/g, "\\'")}'`},
     author: '${s.author}',
