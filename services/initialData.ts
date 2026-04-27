@@ -2314,7 +2314,7 @@ wiseraddedtocart();                                                             
 
 wiseraddedtocart();                                    `,
     author: 'deepika',
-    themeChanges: '<div class="page-width" style="text-align:center;">
+    themeChanges: `<div class="page-width" style="text-align:center;">
 
   <div class="evm-most-popular-products ws_inr_main_wgt"
     data-wiser-widget="top_selling"
@@ -2390,7 +2390,7 @@ document.addEventListener("DOMContentLoaded", function () {
     id: 'NDYCpjApT9pHGT7ZKfCu',
     date: '2026-04-16',
     storeName: 'vmemwd-si.myshopify.com',
-    themeName: 'Release',
+    themeName: 'Release'`,
     code: `async function wiseraddedtocart() {
   const wsres = await fetch('/?section_id=cart-counter');
   const wsText = await wsres.text();
