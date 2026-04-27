@@ -40,7 +40,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
     e.preventDefault();
 
     if (!formData.storeName || !formData.themeName || !formData.storeType || !formData.code || !formData.author) {
-      setError('Store, Theme, Author, and Code are required.');
+      setError('Store, Theme, StoreType, Author, and Code are required.');
       return;
     }
 
@@ -117,7 +117,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
 {/* store types */}
 <div className="field">
   <label>Store Type</label>
-<select
+<select required
   value={formData.storeType}
   onChange={(e) => setFormData({ ...formData, storeType: e.target.value })}
 >
