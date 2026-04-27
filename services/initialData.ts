@@ -2208,5 +2208,269 @@ wiseraddedtocart()                                                              
     author: 'deepika',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'iAl4Su71k1BLBJhUPNUp',
+    date: '2026-04-27',
+    storeName: '3f20ae.myshopify.com',
+    themeName: 'Expanse',
+    code: `async function wiseraddedtocart() {
+  const res = await fetch('/?section_id=cart-ajax');
+  const cartAjaxHtml = await res.text();
+
+  document.dispatchEvent(
+    new CustomEvent('ajaxProduct:added', {
+      detail: {
+        product: {
+          sections: {
+            'cart-ajax': cartAjaxHtml
+          }
+        }
+      }
+    })
+  );
+}
+wiseraddedtocart();`,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'T3jVFleXZb47DaxoHzCU',
+    date: '2026-04-20',
+    storeName: 'h2yrzh-33.myshopify.com',
+    themeName: 'Sleek',
+    code: `function wiserAddedtoCart(){
+
+const wsCart = document.querySelector('cart-drawer');
+
+wsCart.onCartRefresh({
+  detail: {
+    open: true 
+  }
+});
+
+}          
+
+wiserAddedtoCart();                                                                                                                                                                                                                                                                                                                                                                                                                      `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'SxpUQ92smzEHAxDSLCh7',
+    date: '2026-04-20',
+    storeName: 'dazzlehkstore.myshopify.com',
+    themeName: 'Vessel',
+    code: ` async function wiseraddedtocart() {
+
+    const wsres = await fetch('/?section_id=header');
+    const wsText = await wsres.text();
+
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+
+    const wsnewBox = wshtml.querySelector('cart-items-component')?.innerHTML;
+    const cartIconText = wshtml.querySelector('cart-icon')?.innerHTML;
+
+    const cartDrawer = document.querySelector('cart-drawer-component');
+    if (!cartDrawer) return;
+
+    const cartDrawerItems = cartDrawer.querySelector('cart-items-component');
+    const cartIcon = cartDrawer.querySelector('cart-icon');
+
+    if (cartDrawerItems && wsnewBox) {
+      cartDrawerItems.innerHTML = wsnewBox;
+    }
+
+    if (cartIcon && cartIconText) {
+      cartIcon.innerHTML = cartIconText;
+    }
+    const dialog = cartDrawer.querySelector('dialog, .cart-drawer__dialog');
+    dialog?.classList.remove('cart-drawer--empty');
+    if (typeof cartDrawer.open === 'function') {
+      cartDrawer.open();
+    }
+} 
+wiseraddedtocart();                                                                                                                   `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'QZXa0iXImwSCGZ2D7vY6',
+    date: '2026-04-17',
+    storeName: 'mod-shot.myshopify.com',
+    themeName: 'Dawn',
+    code: `                                        async function wiseraddedtocart() {
+  const wsres = await fetch('/?section_id=cart-icon-bubble');
+  const wsText = await wsres.text();
+  const wshtml = document.createElement('div');
+  wshtml.innerHTML = wsText;
+  const wsnewBox = wshtml.querySelector('#shopify-section-cart-icon-bubble')?.innerHTML;
+  const cartIconElement = document.querySelector('#cart-icon-bubble.header__icon--cart');
+  cartIconElement.innerHTML = wsnewBox;
+}
+
+wiseraddedtocart();                                    `,
+    author: 'deepika',
+    themeChanges: '<div class="page-width" style="text-align:center;">
+
+  <div class="evm-most-popular-products ws_inr_main_wgt"
+    data-wiser-widget="top_selling"
+    data-design-view="false"
+    data-no-of-products="4"
+    data-enable-feature="true"
+    data-no-products-pre-row="4"
+    data-product-view="grid">
+  </div>
+
+  <button class="evm-vew-allbtn"
+    onclick="window.location.href='https://thegoodvibes.uk/collections/best-sellers'">
+    <a href="https://thegoodvibes.uk/collections/best-sellers">View all</a>
+  </button>
+
+</div>
+
+<style>
+.evm-vew-allbtn{
+    display:none;
+    border-radius: var(--buttons-radius-outset);
+    letter-spacing:.1rem;
+    justify-content:center;
+    align-items:center;
+    border:0;
+    padding:0 3rem;
+    height:53.9px;
+    box-sizing:border-box;
+    cursor:pointer!important;
+    font:inherit;
+    color: rgb(var(--color-button-text));
+    background-color: rgba(var(--color-button), var(--alpha-button-background));
+}
+
+.evm-vew-allbtn.show{
+    display:inline-flex;
+}
+
+.evm-vew-allbtn:hover{
+    transform: rotate(1deg);
+    transition: 0.3s ease;
+    box-shadow: 0 2rem 3.5rem -2rem #00000080;
+}
+
+.evm-vew-allbtn a{
+    color:#fff;
+    text-decoration:none;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const btn = document.querySelector(".evm-vew-allbtn");
+
+    const check = setInterval(() => {
+
+        // 🔥 MOST RELIABLE CHECK (product links)
+        const products = document.querySelectorAll('.evm-most-popular-products a[href*="/products/"]');
+
+        if (products.length > 0) {
+            btn.classList.add("show");
+            clearInterval(check);
+        }
+
+    }, 300);
+
+});
+</script>',
+    screenshot: ''
+  },
+  {
+    id: 'NDYCpjApT9pHGT7ZKfCu',
+    date: '2026-04-16',
+    storeName: 'vmemwd-si.myshopify.com',
+    themeName: 'Release',
+    code: `async function wiseraddedtocart() {
+  const wsres = await fetch('/?section_id=cart-counter');
+  const wsText = await wsres.text();
+  const wshtml = document.createElement('div');
+  wshtml.innerHTML = wsText;
+
+  const wsBadge = wshtml.querySelector('.cart-count-badge');
+  const liveBadge = document.querySelector('.cart-count-badge');
+
+  if (wsBadge && liveBadge) {
+    liveBadge.innerHTML = wsBadge.innerHTML;
+    if (wsBadge.classList.contains('hidden')) {
+      liveBadge.classList.add('hidden');
+    } else {
+      liveBadge.classList.remove('hidden');
+    }
+  }
+
+  const wsrescart = await fetch('/?section_id=cart-drawer');
+  const wstextcart = await wsrescart.text();
+  const wshtmlcart = document.createElement('div');
+  wshtmlcart.innerHTML = wstextcart;
+
+  const wsnewBoxCart = wshtmlcart.querySelector('.cart-drawer__inner')?.innerHTML;
+  const drawerInner = document.querySelector('.cart-drawer__inner');
+
+  if (drawerInner && wsnewBoxCart) {
+    drawerInner.innerHTML = wsnewBoxCart;
+  }
+
+  const wsopener = document.querySelector('cart-drawer');
+  if (wsopener) {
+    wsopener.open();
+    wsopener.classList.remove('is-empty');
+  }
+}
+
+wiseraddedtocart();`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'Wi0vsKb8O2nFquLdyfxM',
+    date: '2026-04-08',
+    storeName: 'vvwbb0-gc.myshopify.com',
+    themeName: 'Horizon',
+    code: `                                        async function wiseraddedtocart() {
+
+    const wsres = await fetch('/?section_id=header');
+    const wsText = await wsres.text();
+
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+
+    const wsnewBox = wshtml.querySelector('cart-items-component')?.innerHTML;
+    const cartIconText = wshtml.querySelector('cart-icon')?.innerHTML;
+
+    const cartDrawer = document.querySelector('cart-drawer-component');
+    if (!cartDrawer) return;
+
+    const cartDrawerItems = cartDrawer.querySelector('cart-items-component');
+    const cartIcon = cartDrawer.querySelector('cart-icon');
+
+    if (cartDrawerItems && wsnewBox) {
+      cartDrawerItems.innerHTML = wsnewBox;
+    }
+
+    if (cartIcon && cartIconText) {
+      cartIcon.innerHTML = cartIconText;
+    }
+    const dialog = cartDrawer.querySelector('dialog, .cart-drawer__dialog');
+    dialog?.classList.remove('cart-drawer--empty');
+    if (typeof cartDrawer.open === 'function') {
+      cartDrawer.open();
+    }
+} 
+wiseraddedtocart();                                                                                                            `,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
