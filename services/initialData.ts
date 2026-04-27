@@ -2209,7 +2209,7 @@ wiseraddedtocart()                                                              
     themeChanges: '',
     screenshot: ''
   },
-  {
+ {
     id: 'iAl4Su71k1BLBJhUPNUp',
     date: '2026-04-27',
     storeName: '3f20ae.myshopify.com',
@@ -2383,14 +2383,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
 
 });
-</script>',
+</script>`,
     screenshot: ''
   },
   {
     id: 'NDYCpjApT9pHGT7ZKfCu',
     date: '2026-04-16',
     storeName: 'vmemwd-si.myshopify.com',
-    themeName: 'Release'`,
+    themeName: 'Release',
     code: `async function wiseraddedtocart() {
   const wsres = await fetch('/?section_id=cart-counter');
   const wsText = await wsres.text();
