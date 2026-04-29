@@ -123,6 +123,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
 >
     <option value="">Select Store Type</option>
     <option value="Electronics">📱 Electronics</option>
+    <option value="Drinks">Drinks</option>
     <option value="Fashion">👕 Fashion</option>
     <option value="Beauty">💄 Beauty</option>
     <option value="Home & Decor">🏠 Home & Decor</option>
