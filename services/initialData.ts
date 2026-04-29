@@ -2477,7 +2477,7 @@ wiseraddedtocart();                                                             
     id: 'WUowA67yCjSgcj209YTT',
     date: '2026-04-29',
     storeName: '66d437-2.myshopify.com',
-    storeType: 'Other',
+    storeType: 'Drinks',
     themeName: 'True Hydration',
     code: `async function wiseraddedtocart() {
   const wsres = await fetch('/?section_id=cart-icon-bubble');
