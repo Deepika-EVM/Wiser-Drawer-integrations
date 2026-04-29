@@ -2472,5 +2472,35 @@ wiseraddedtocart();                                                             
     author: 'Deepika',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'WUowA67yCjSgcj209YTT',
+    date: '2026-04-29',
+    storeName: '66d437-2.myshopify.com',
+    storeType: 'Other',
+    themeName: 'True Hydration',
+    code: `async function wiseraddedtocart() {
+  const wsres = await fetch('/?section_id=cart-icon-bubble');
+  const wsText = await wsres.text();
+  const wshtml = document.createElement('div');
+  wshtml.innerHTML = wsText;
+  const wsnewBox = wshtml.querySelector('#shopify-section-cart-icon-bubble')?.innerHTML;
+  const cartIconElement = document.querySelector('#cart-icon-bubble.header__icon--cart');
+  cartIconElement.innerHTML = wsnewBox;
+  const wsrescart = await fetch('/?section_id=cart-drawer');
+  const wstextcart = await wsrescart.text();
+  const wshtmlcart = document.createElement('div');
+  wshtmlcart.innerHTML = wstextcart;
+  const wsnewBoxCart = wshtmlcart.querySelector('.drawer__inner').innerHTML;
+  document.querySelector('.drawer__inner').innerHTML = wsnewBoxCart;
+  const wsopener = document.querySelector('cart-drawer');
+  wsopener.open();
+  document.querySelector('cart-drawer').classList.remove('is-empty');
+}
+
+wiseraddedtocart();`,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
