@@ -2521,7 +2521,7 @@ window.SLIDECART_UPDATE(() => {
 
   container.insertAdjacentHTML(
     'beforeend',
-    `
+    
     <div class='evm-new-arrivals-product ws_crt_wgt'
          data-wiser-page='cartdrawer'
          data-design-view='true'
@@ -2617,7 +2617,7 @@ window.SLIDECART_UPDATE(() => {
          data-product-view='slider'
          data-arrow-position='ws-arrow-top-right'>
     </div>
-    `
+    
   );
 }); 
      window.SLIDECART_OPEN();  
