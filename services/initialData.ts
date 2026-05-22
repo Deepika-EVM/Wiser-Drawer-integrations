@@ -2502,5 +2502,129 @@ wiseraddedtocart();`,
     author: 'deepika',
     themeChanges: '',
     screenshot: ''
+  },
+   {
+    id: 'DLpxtsoCNhjvp1LjQ48K',
+    date: '2026-05-22',
+    storeName: 'hypeach-boutique.myshopify.com',
+    storeType: 'Fashion',
+    themeName: 'Upscale',
+    code: `
+function  wiseraddedtocart() { 
+
+window.SLIDECART_UPDATE(() => {
+  const container = document.querySelector('#ws-all-wgt-container');
+
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  container.insertAdjacentHTML(
+    'beforeend',
+    `
+    <div class='evm-new-arrivals-product ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='new_arrival'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='evm-related-product ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='related_products'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='evm-recommended-products ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='recommended_products'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='evm-most-popular-products ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='top_selling'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='trending-products ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='trending_products'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='evm-featured-collections-product ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='featured_collections'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='recently-viewed ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='recently_products'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+
+    <div class='evm-related-viewed-browsing ws_crt_wgt'
+         data-wiser-page='cartdrawer'
+         data-design-view='true'
+         data-wiser-widget='recently_related_products'
+         data-cart-view='true'
+         data-no-of-products='5'
+         data-enable-feature='true'
+         data-no-products-pre-row='1'
+         data-product-view='slider'
+         data-arrow-position='ws-arrow-top-right'>
+    </div>
+    `
+  );
+}); 
+     window.SLIDECART_OPEN();  
+   }                                                                     
+`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
