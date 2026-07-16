@@ -169,7 +169,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
               {/* ✅ NEW LAYOUT FIELD */}
 <div className="field">
   <label>Main Layout</label>
-  <select
+  <select required
     value={formData.mainLayout}
     onChange={(e) =>
       setFormData({ ...formData, mainLayout: e.target.value })
@@ -186,6 +186,7 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
  <div className="field">
   <label>FBT Layout</label>
   <select
+  required
     value={formData.fbtLayout}
     onChange={(e) =>
       setFormData({ ...formData, fbtLayout: e.target.value })
