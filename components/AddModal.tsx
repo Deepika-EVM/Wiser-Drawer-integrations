@@ -25,6 +25,8 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
     themeName: '',
     storeType: '',
     version: '',
+     mainLayout: '',
+  fbtLayout: '',
     author: '',
     code: '',
     screenshot: '',
@@ -55,6 +57,8 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
         themeName: '',
         storeType: '',
         version: '',
+         mainLayout: '',
+  fbtLayout: '',
         author: '',
         code: '',
         screenshot: '',
@@ -161,6 +165,39 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
                   onChange={(e) => setFormData({ ...formData, storeName: e.target.value })}
                 />
               </div>
+              {/* ✅ NEW LAYOUT FIELD */}
+<div className="field">
+  <label>Main Layout</label>
+  <select
+    value={formData.mainLayout}
+    onChange={(e) =>
+      setFormData({ ...formData, mainLayout: e.target.value })
+    }
+  >
+    <option value="">Select Main Layout</option>
+    <option value="Layout 1">Layout 1</option>
+    <option value="Layout 2">Layout 2</option>
+    <option value="Layout 3">Layout 3</option>
+    <option value="Layout 4">Layout 4</option>
+    <option value="Layout 5">none</option>
+  </select>
+ </div>
+ <div className="field">
+  <label>FBT Layout</label>
+  <select
+    value={formData.fbtLayout}
+    onChange={(e) =>
+      setFormData({ ...formData, fbtLayout: e.target.value })
+    }
+  >
+    <option value="">Select FBT Layout</option>
+    <option value="Layout 1">Layout 1</option>
+    <option value="Layout 2">Layout 2</option>
+    <option value="Layout 3">Layout 3</option>
+    <option value="Layout 4">Layout 4</option>
+    <option value="Layout 5">none</option>
+  </select>
+</div>
 </div>
 
 

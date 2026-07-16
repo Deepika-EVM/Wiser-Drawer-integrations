@@ -29,11 +29,14 @@
     justify-content: space-between;
     width: 100%;
 }
-
+.layout-row{
+  font-size: 12px;
+}
 .theme-name-wrapper {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .theme-icon {
@@ -364,7 +367,9 @@
   border: 1px solid #00000038;
   font-size: 14px;
 }
-
+span.layout-badge {
+    font-size: 14px;
+}
 .modal-container .code-box {
   font-family: monospace;
 }

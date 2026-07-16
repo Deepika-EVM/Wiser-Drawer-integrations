@@ -4,7 +4,9 @@ export interface Snippet {
   storeName: string;      // Store associated with the snippet
   themeName: string;
   storeType: string;
-  version?: string;      // Theme name of the store
+  version?: string; 
+  mainLayout?: string;       // Theme name of the store
+  fbtLayout?: string;       // Theme name of the store
   date: string;           // Date string in ISO format (YYYY-MM-DD recommended)
   author: string;         // Author of the snippet
   code: string;           // The actual code snippet

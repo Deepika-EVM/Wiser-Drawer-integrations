@@ -73,13 +73,15 @@ const isAdminAllowed = () => {
 const filteredSnippets = useMemo(() => {
   const q = searchQuery.toLowerCase();
 
-  const filtered = snippets.filter(s =>
-    (s.themeName ?? '').toLowerCase().includes(q) ||
-    (s.storeType ?? '').toLowerCase().includes(q) ||
-    (s.storeName ?? '').toLowerCase().includes(q) ||
-    (s.author ?? '').toLowerCase().includes(q) ||
-    (s.code ?? '').toLowerCase().includes(q)
-  );
+const filtered = snippets.filter(s =>
+  (s.themeName ?? '').toLowerCase().includes(q) ||
+  (s.storeType ?? '').toLowerCase().includes(q) ||
+  (s.storeName ?? '').toLowerCase().includes(q) ||
+  (s.author ?? '').toLowerCase().includes(q) ||
+  (s.code ?? '').toLowerCase().includes(q) ||
+  (s.mainLayout ?? '').toLowerCase().includes(q) ||
+  (s.fbtLayout ?? '').toLowerCase().includes(q)
+);
 
   return filtered.sort((a, b) => {
     if (sortBy === 'date-desc') {

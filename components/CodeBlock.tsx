@@ -91,8 +91,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ snippet }) => {
   )}
 </h3>
 
-          </div>
-
+        
+<div className="layout-row">
+  {snippet.mainLayout && <>Main: {snippet.mainLayout}</>}
+  {snippet.mainLayout && snippet.fbtLayout && <span> | </span>}
+  {snippet.fbtLayout && <>FBT: {snippet.fbtLayout}</>}
+</div>
+  </div>
    <div className="date">{snippet.date}</div>
         </div>
       </div>
