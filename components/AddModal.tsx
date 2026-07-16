@@ -41,7 +41,8 @@ const AddModal: React.FC<AddModalProps> = ({ isOpen, onClose, onSave }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.storeName || !formData.themeName || !formData.storeType || !formData.code || !formData.author) {
+    if (!formData.storeName || !formData.themeName || !formData.storeType || !formData.code || !formData.author ||!formData.mainLayout ||
+  !formData.fbtLayout) {
       setError('Store, Theme, StoreType, Author, and Code are required.');
       return;
     }
