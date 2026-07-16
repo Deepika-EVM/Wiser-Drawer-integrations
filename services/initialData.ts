@@ -2626,5 +2626,159 @@ window.SLIDECART_UPDATE(() => {
     author: 'Deepika',
     themeChanges: '',
     screenshot: ''
+  },
+  {
+    id: 'gas7OyrcmuD6bolh3qNH',
+    date: '2026-06-17',
+    storeName: 'reshoevn8r-2.myshopify.com',
+    storeType: 'Electronics',
+    themeName: 'Dawn',
+    code: `async function wiseraddedtocart() {
+
+     const wsrescart = await fetch('/?section_id=cart-drawer');
+    const wstextcart = await wsrescart.text();
+    const wshtmlcart = document.createElement('div');
+
+    wshtmlcart.innerHTML = wstextcart;
+    const wsnewBoxCart = wshtmlcart.querySelector('.drawer__inner').innerHTML;
+    document.querySelector('.drawer__inner').innerHTML = wsnewBoxCart;
+    const cartDrawer = document.querySelector('cart-drawer');
+    if (cartDrawer) {
+        cartDrawer.open();
+    }
+    document.querySelector('cart-drawer').classList.remove('is-empty');
+const wsres = await fetch('/?section_id=cart-icon-bubble');
+    const wsText = await wsres.text();
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+    const wsnewBox = wshtml.querySelector('#shopify-section-cart-icon-bubble')?.innerHTML;
+    const cartIconElement = document.querySelector('#cart-icon-bubble.r8-hdr__bag');
+    if (cartIconElement) {
+        cartIconElement.innerHTML = wsnewBox;
+    }
+   
+}
+
+wiseraddedtocart();`,
+    author: 'deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: '9So6WmyyxcSc8P30xDZx',
+    date: '2026-06-05',
+    storeName: 'regal-movies.myshopify.com',
+    storeType: 'Fashion',
+    themeName: 'Avalanche',
+    code: `async function wiseraddedtocart() {
+    const wsres = await fetch('/?section_id=cart-icon-bubble');
+    const wsText = await wsres.text();
+
+    const wshtml = document.createElement('div');
+    wshtml.innerHTML = wsText;
+
+    document.querySelector('#cart-icon-bubble.header__icon--cart').innerHTML =
+        wshtml.querySelector('#shopify-section-cart-icon-bubble')?.innerHTML || '';
+ $('body .header__icons #cart-icon-bubble')[0].click();
+   
+}
+
+wiseraddedtocart();`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'j41tI2t0jJLcn3iQvzwP',
+    date: '2026-06-01',
+    storeName: 't6kb1g-mf.myshopify.com',
+    storeType: 'Electronics',
+    themeName: 'Ignite',
+    code: `async function wiseraddedtocart() {
+
+  const cartDrawer = document.querySelector('cart-drawer');
+
+  if (!cartDrawer) return;
+
+  const iconRes = await fetch('/?sections=cart-icon-bubble');
+  const iconData = await iconRes.json();
+
+  const iconHTML = new DOMParser()
+    .parseFromString(iconData['cart-icon-bubble'], 'text/html')
+    .querySelector('#shopify-section-cart-icon-bubble')?.innerHTML;
+
+  const iconEl = document.querySelector('#cart-icon-bubble.header__icon--cart');
+  if (iconEl && iconHTML) iconEl.innerHTML = iconHTML;
+
+  await new Promise((resolve) => {
+    cartDrawer.reload();
+    setTimeout(resolve, 300);
+  });
+
+  const drawer = document.getElementById('Cart-Drawer') || cartDrawer;
+
+  if (drawer) {
+    drawer.classList.remove('is-empty');
+  }
+
+  cartDrawer.open();
+}
+
+wiseraddedtocart();`,
+    author: 'Deepika',
+    themeChanges: '',
+    screenshot: ''
+  },
+  {
+    id: 'f1vKwYuZ7Wqb7IoY2RCs',
+    date: '2026-05-25',
+    storeName: 'scuderi-store.myshopify.com',
+    storeType: 'Fashion',
+    themeName: 'Reformation',
+    code: ` async function wiseraddedtocart() {
+
+  const wsrescart = await fetch('/?section_id=cart-drawer');
+  const wstextcart = await wsrescart.text();
+
+  const wshtmlcart = document.createElement('div');
+  wshtmlcart.innerHTML = wstextcart;
+
+  const wsnewBoxCart = wshtmlcart.querySelector(
+    '#Cart-Drawer .side-panel-content'
+  );
+
+  const wscurrentCart = document.querySelector(
+    '#Cart-Drawer .side-panel-content'
+  );
+
+  if (wsnewBoxCart && wscurrentCart) {
+    wscurrentCart.innerHTML = wsnewBoxCart.innerHTML;
+  }
+
+  const wsdrawer = document.getElementById('Cart-Drawer');
+
+  if (!wsdrawer) return;
+
+  wsdrawer.classList.remove('is-empty');
+
+  requestAnimationFrame(() => {
+    wsdrawer.classList.add('active');
+
+    document.body.classList.add('open-cart', 'open-cc');
+  });
+
+  if (typeof CartDrawer !== 'undefined') {
+    new CartDrawer();
+  }
+
+  if (typeof Cart !== 'undefined') {
+    new Cart();
+  }
+}
+
+wiseraddedtocart();                                    `,
+    author: 'jaya',
+    themeChanges: '',
+    screenshot: ''
   }
 ]
